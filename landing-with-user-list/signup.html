@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/theme.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/custom.css">
+    
+    <style>
+
+/* font-family: 'Josefin Sans', sans-serif; */
+
+        .contact-form-wrapper{ background-color: #fff; position: relative;}
+        .contact-form-heading {color: #A8344A;z-index: 10;position: relative;font-family: 'Josefin Sans', sans-serif;font-size: 42px;font-weight: 400;margin-bottom: 20px;}
+        .contact-form-paragh{ color: #000; font-family: 'Josefin Sans', sans-serif;}
+        .contact-form-wrapper input.form-control {padding: 13px 20px;}
+        .btn.contact-form-btn {color: #fff;padding: 12px 0;font-size: 25px;background: rgb(60,44,44);background: linear-gradient(127deg, rgba(60,44,44,1) 0%, rgba(168,52,74,1) 100%); font-family: 'Josefin Sans', sans-serif;}
+        .contact-form-img {left: 0;position: absolute;top: 0;max-width: 150px;}
+        span.error-note-text {font-size: 12px;}
+        .contact-form-wrapper .form-control{ background-color: #ffffff;}
+        
+    </style>
+
+</head>
+  <body>
+   
+    <section class="p-0">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-5 col-md-7 col-12 mt-4">
+                    <form action="">
+                        <div class="contact-form-wrapper bg-primary bg-opacity-10 p-md-5 p-2 pt-1 rounded">
+                            <img src="./circle-pattern-light.png" alt="" class="img-fluid contact-form-img d-none d-md-block">
+                            <div class="row my-2">
+                                <div class="col-12">
+                                    <h2 class="contact-form-heading text-center">Get In Touch</h2>
+                                    <p class="contact-form-paragh text-center">faucibus ultrices facilisis odio amet, luctus vehicula, turpis elit. Sed placerat. 
+                                    </p>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <input type="text" class="form-control shadow-none" placeholder="Full name" aria-label="Full name">
+                                </div>
+                                <div class="col-12 my-2">
+                                    <input type="email" class="form-control shadow-none" placeholder="Email" aria-label="Email">
+                                </div>
+                                <div class="col-12 my-2">
+                                    <input type="text" class="form-control shadow-none" placeholder="Contact with Country Code" aria-label="Contact">
+                                </div>
+                                <div class="col-12 my-2">
+                                    <input type="password" class="form-control shadow-none" placeholder="Password" aria-label="password">
+                                </div>
+                                <div class="col-12 my-2">
+                                    <input type="password" class="form-control shadow-none" placeholder="confirm Password" aria-label="c-password">
+                                </div>
+                  
+                                <div class="col-12 mx-auto my-2 mt-4">
+                                    <button class="btn w-100 py-3 bg-primary text-white bg-opacity-50" type="button"><i class="fa fa-lock"></i> Signup</button>
+                                </div>
+                                <div class="col-12 mt-4 d-flex justify-content-between">
+									<a href="./index.html" class="text-primary"><i class="fa fa-arrow-left"></i> back</a>
+									<a href="./login.html" class="text-primary"> login <i class="fa fa-arrow-right"></i></a>
+								</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
