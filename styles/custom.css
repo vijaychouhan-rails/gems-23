@@ -1,85 +1,88 @@
-
 /* user list css start */
 
 .avatar-md {
-    height: 5rem;
-    width: 5rem;
+  height: 5rem;
+  width: 5rem;
 }
 
 .fs-19 {
-    font-size: 19px;
+  font-size: 19px;
 }
 
 .primary-link {
-    color: #314047;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+  color: #314047;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 a {
-    color: #02af74;
-    text-decoration: none;
+  color: #02af74;
+  text-decoration: none;
 }
 
-.bookmark-post .favorite-icon a, .job-box.bookmark-post .favorite-icon a {
-    background-color: #da3746;
-    color: #fff;
-    border-color: danger;
+.bookmark-post .favorite-icon a,
+.job-box.bookmark-post .favorite-icon a {
+  background-color: #da3746;
+  color: #fff;
+  border-color: danger;
 }
 .favorite-icon a {
-    display: inline-block;
-    /* width: 30px; */
-    /* height: 30px; */
-    font-size: 12px;
-    line-height: 1;
-    text-align: center;
-    border: 1px solid #eff0f2;
-    border-radius: 6px;
-    color: #fff;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+  display: inline-block;
+  /* width: 30px; */
+  /* height: 30px; */
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid #eff0f2;
+  border-radius: 6px;
+  color: #fff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-
 
 .candidate-list-box .favorite-icon {
-    position: absolute;
-    right: 22px;
-    top: 22px;
+  position: absolute;
+  right: 22px;
+  top: 22px;
 }
 .fs-14 {
-    font-size: 14px;
+  font-size: 14px;
 }
 .bg-soft-secondary {
-    background-color: rgba(116,120,141,.15)!important;
-    color: #74788d!important;
+  background-color: rgba(116, 120, 141, 0.15) !important;
+  color: #74788d !important;
 }
 
 .mt-1 {
-    margin-top: 0.25rem!important;
+  margin-top: 0.25rem !important;
 }
 
 .edit-delete-list-btn {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
-.btn-check:focus+.btn, .btn:focus{
-    box-shadow: none;
+.btn-check:focus + .btn,
+.btn:focus {
+  box-shadow: none;
 }
 
-.form-control:focus{
-    box-shadow: none;
+.form-control:focus {
+  box-shadow: none;
 }
-
 
 .back-top.back-top-show {
-    visibility: visible;
-    opacity: 1;
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
 }
-.btn:hover{
-    color: #fff;
+.btn:hover {
+  color: #fff;
 }
-.btn.btn-outline-warning:hover{
-    color: #000;
+.btn.btn-outline-warning:hover {
+  color: #000;
+}
+
+.navbar .hide-dd-icon > a::after {
+  display: none !important;
 }
