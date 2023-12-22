@@ -1,7 +1,12 @@
 import Image from "next/image";
 import React from "react";
+import { FaPlay } from "react-icons/fa";
+import { BiSolidBadgeCheck } from "react-icons/bi";
+import { FaEnvelope, FaCheckCircle } from "react-icons/fa";
+
 import NewStudentImg from "./newStudentImg";
 import DotSvg from "./dotSvg";
+import styles from "./styles.module.css";
 
 function TopSection() {
   return (
@@ -31,7 +36,7 @@ function TopSection() {
                   <svg
                     width="300px"
                     height="62.1px"
-                    enable-background="new 0 0 366 62.1"
+                    enableBackground="new 0 0 366 62.1"
                     viewBox="0 0 366 62.1"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -51,15 +56,15 @@ function TopSection() {
 
             <ul className="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
               <li className="list-inline-item me-2">
-                <i className="bi bi-patch-check-fill h6 me-1"></i>Learn with
-                experts
+                <BiSolidBadgeCheck className="h5 me-1" />
+                Learn with experts
               </li>
               <li className="list-inline-item me-2">
-                <i className="bi bi-patch-check-fill h6 me-1"></i>Get
-                certificate
+                <BiSolidBadgeCheck className="h5 me-1" />
+                Get certificate
               </li>
               <li className="list-inline-item">
-                <i className="bi bi-patch-check-fill h6 me-1"></i>Get membership
+                <BiSolidBadgeCheck className="h5 me-1" /> Get membership
               </li>
             </ul>
 
@@ -75,9 +80,9 @@ function TopSection() {
                   data-glightbox
                   data-gallery="office-tour"
                   href="#"
-                  className="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7"
+                  className={`btn btn-round btn-primary-shadow mb-0 overflow-visible me-7 ${styles.roundButtonCust}`}
                 >
-                  <i className="fas fa-play"></i>
+                  <FaPlay />
                   <h6 className="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">
                     Watch video
                   </h6>
@@ -92,7 +97,7 @@ function TopSection() {
             width="550px"
             height="538px"
             viewBox="0 0 554 544"
-            style="enable-background: new 0 0 554 544"
+            style="enableBackground: new 0 0 554 544"
             xml:space="preserve"
           >
             <path
@@ -143,14 +148,14 @@ function TopSection() {
             <div className="p-3 bg-blur border border-light shadow rounded-4 position-absolute bottom-0 start-0 z-index-9 d-none d-xl-block mb-5 ms-5">
               <div className="d-flex justify-content-between align-items-center">
                 <span className="icon-lg bg-warning rounded-circle">
-                  <i className="fas fa-envelope text-white"></i>
+                  <FaEnvelope className="text-white" />
                 </span>
 
                 <div className="text-start ms-3">
                   <h6 className="mb-0 text-white">
                     Congratulations
                     <span className="ms-4">
-                      <i className="fas fa-check-circle text-success"></i>
+                      <FaCheckCircle className="text-success" />
                     </span>
                   </h6>
                   <p className="mb-0 small text-white">
