@@ -40,9 +40,9 @@ const COUNTER_DATA = [
 
 function CounterSections() {
   return (
-    <section class="py-0 py-xl-5">
-      <div class="container">
-        <div class="row g-4">
+    <section className="py-0 py-xl-5">
+      <div className="container">
+        <div className="row g-4">
           {COUNTER_DATA.map((data, index) => {
             return (
               <CounterSection

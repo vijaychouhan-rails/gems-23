@@ -5,6 +5,7 @@ import HEAD_TITLES from "@/utils/constants/titleConstants";
 import TopSection from "./topSection";
 import CounterSections from "./counterSections";
 import BecomeAnInstructor from "./becomeAnInstructor";
+import ReviewRating from "./reviewRating";
 
 function LandingPage() {
   return (
@@ -13,6 +14,7 @@ function LandingPage() {
         <TopSection />
         <CounterSections />
         <BecomeAnInstructor />
+        <ReviewRating />
       </main>
     </HeadPage>
   );
