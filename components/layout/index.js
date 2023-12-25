@@ -7,7 +7,7 @@ function LayoutPage({ children }) {
     <>
       <HeaderPage />
       {children}
-      {/* <FooterPage /> */}
+      <FooterPage />
     </>
   );
 }
