@@ -2,8 +2,9 @@ import React from "react";
 import HeadPage from "../layout/headPage";
 import HEAD_TITLES from "@/utils/constants/titleConstants";
 import styles from "./styles.module.css";
-import { Button, Form } from "react-bootstrap";
+import { Alert, Button, Form } from "react-bootstrap";
 import { Field, Formik } from "formik";
+import axios from "axios";
 
 import * as yup from "yup";
 import InputField from "../fields/inputField";
@@ -15,7 +16,22 @@ const defaultValues = {
 
 function Login() {
   const handleFormSubmit = (values) => {
-    console.log("=====values====", values);
+    axios
+      .post("https://reqres.in/api/login", {
+        email: values.email,
+        password: values.password,
+      })
+      .then(function (response) {
+        localStorage.setItem("userAuthToken", response.data.token);
+        window.location = "/home";
+      })
+      .catch(function (error) {
+        if (error?.response?.status == 400) {
+          alert(error.response?.data?.error);
+        } else {
+          alert(error.message);
+        }
+      });
   };
 
   const validationSchema = yup.object().shape({
@@ -31,6 +47,9 @@ function Login() {
           <div className="container my-3 pt-5">
             <div className="row d-flex justify-content-center mt-3">
               <div className="col-lg-5 col-md-7 col-12">
+                {/* <Alert key="danger" variant="danger">
+                  This is a alert—check it out!
+                </Alert> */}
                 <Formik
                   validationSchema={validationSchema}
                   onSubmit={handleFormSubmit}
