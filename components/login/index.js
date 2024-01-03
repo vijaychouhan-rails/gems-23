@@ -8,6 +8,7 @@ import axios from "axios";
 
 import * as yup from "yup";
 import InputField from "../fields/inputField";
+import { loginOperation } from "@/services/loginOperation";
 
 const defaultValues = {
   email: "",
@@ -16,22 +17,28 @@ const defaultValues = {
 
 function Login() {
   const handleFormSubmit = async (values) => {
-    await axios
-      .post("https://reqres.in/api/login", {
-        email: values.email,
-        password: values.password,
-      })
-      .then(function (response) {
-        localStorage.setItem("userAuthToken", response.data.token);
-        window.location = "/users";
-      })
-      .catch(function (error) {
-        if (error?.response?.status == 400) {
-          alert(error.response?.data?.error);
-        } else {
-          alert(error.message);
-        }
-      });
+    const res = await loginOperation({
+      email: values.email,
+      password: values.password,
+    });
+
+    console.log("===res====", res);
+    // await axios
+    //   .post("https://reqres.in/api/login", {
+    //     email: values.email,
+    //     password: values.password,
+    //   })
+    //   .then(function (response) {
+    //     localStorage.setItem("userAuthToken", response.data.token);
+    //     window.location = "/users";
+    //   })
+    //   .catch(function (error) {
+    //     if (error?.response?.status == 400) {
+    //       alert(error.response?.data?.error);
+    //     } else {
+    //       alert(error.message);
+    //     }
+    //   });
   };
 
   const validationSchema = yup.object().shape({
