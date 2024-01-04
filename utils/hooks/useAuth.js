@@ -4,24 +4,36 @@ import Cookies from "universal-cookie";
 
 function useAuth() {
   const router = useRouter();
-  const [validating, setValidating] = useState(true);
+
+  const canSkip = ["/home", "/"].includes(router.pathname);
+
+  // console.log(
+  //   "===user auth canSkip, router.pathname==",
+  //   canSkip,
+  //   router.pathname
+  // );
+
+  const [validated, setValidated] = useState(null);
+
+  // console.log(
+  //   "===user auth canSkip, validated, router.pathname==",
+  //   canSkip,
+  //   validated,
+  //   router.pathname
+  // );
 
   useEffect(() => {
+    // if (!validated) {
     const cookies = new Cookies();
     const token = cookies.get("gems");
 
-    console.log("===111token=====", !token);
+    console.log("===111token=====", !!token);
 
-    if (!token) {
-      router.replace("/login");
-    }
-    setValidating(false);
-    //  else {
-    //   router.replace("/home");
+    setValidated(canSkip || !!token);
     // }
-  }, []);
+  }, [validated, canSkip]);
 
-  return { validating };
+  return { validated };
 }
 
 export default useAuth;

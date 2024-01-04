@@ -4,11 +4,11 @@ import UsersPage from "@/components/usersPage";
 import useAuth from "@/utils/hooks/useAuth";
 
 function Users() {
-  const { validating } = useAuth();
-  console.log("===a=====", validating);
-  if (validating) {
-    return "loading...";
-  }
+  // const { validating } = useAuth();
+  // console.log("===a=====", validating);
+  // if (validating) {
+  //   return "loading...";
+  // }
   return <UsersPage />;
 }
 
