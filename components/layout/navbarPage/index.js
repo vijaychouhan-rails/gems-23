@@ -48,7 +48,9 @@ function NavbarPage() {
             <Link href="/" className="nav-link">
               Home
             </Link>
-            <Nav.Link href="#pricing">User List</Nav.Link>
+            <Link href="/users" className="nav-link">
+              User List
+            </Link>
             <Nav.Link href="#pricing">Profile</Nav.Link>
           </Nav>
 

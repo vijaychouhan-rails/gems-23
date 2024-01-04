@@ -5,9 +5,11 @@ import styles from "./styles.module.css";
 import { Button, Form, Spinner } from "react-bootstrap";
 import { Field, Formik } from "formik";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 import * as yup from "yup";
 import InputField from "../fields/inputField";
+import { loginService } from "@/services/authService";
 
 const defaultValues = {
   email: "",
@@ -15,23 +17,36 @@ const defaultValues = {
 };
 
 function Login() {
+  const router = useRouter();
+
   const handleFormSubmit = async (values) => {
-    await axios
-      .post("https://reqres.in/api/login", {
-        email: values.email,
-        password: values.password,
-      })
-      .then(function (response) {
-        localStorage.setItem("userAuthToken", response.data.token);
-        window.location = "/users";
-      })
-      .catch(function (error) {
-        if (error?.response?.status == 400) {
-          alert(error.response?.data?.error);
-        } else {
-          alert(error.message);
-        }
-      });
+    const res = await loginService({
+      password: values.password,
+      email: values.email,
+    });
+
+    if (res.success) {
+      // window.location = "/users";
+      router.replace("/users");
+    } else {
+      alert(res.message);
+    }
+    // await axios
+    //   .post("https://reqres.in/api/login", {
+    //     email: values.email,
+    //     password: values.password,
+    //   })
+    //   .then(function (response) {
+    //     localStorage.setItem("userAuthToken", response.data.token);
+    //     window.location = "/users";
+    //   })
+    //   .catch(function (error) {
+    //     if (error?.response?.status == 400) {
+    //       alert(error.response?.data?.error);
+    //     } else {
+    //       alert(error.message);
+    //     }
+    //   });
   };
 
   const validationSchema = yup.object().shape({
