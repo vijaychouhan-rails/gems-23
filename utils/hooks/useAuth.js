@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Cookies from "universal-cookie";
+import Cookies from "js-cookie";
 
 function useAuth() {
   const router = useRouter();
@@ -24,8 +24,7 @@ function useAuth() {
 
   useEffect(() => {
     // if (!validated) {
-    const cookies = new Cookies();
-    const token = cookies.get("gems");
+    const token = Cookies.get("gems");
 
     console.log("===111token=====", !!token);
 

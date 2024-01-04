@@ -9,6 +9,7 @@ import axios from "axios";
 import * as yup from "yup";
 import InputField from "../fields/inputField";
 import { loginOperation } from "@/services/loginOperation";
+import { useRouter } from "next/router";
 
 const defaultValues = {
   email: "",
@@ -16,11 +17,17 @@ const defaultValues = {
 };
 
 function Login() {
+  const router = useRouter();
+
   const handleFormSubmit = async (values) => {
     const res = await loginOperation({
       email: values.email,
       password: values.password,
     });
+
+    if (res.success) {
+      router.replace("/users");
+    }
 
     console.log("===res====", res);
     // await axios

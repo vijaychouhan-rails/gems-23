@@ -23,4 +23,5 @@ function LayoutPage({ children }) {
   );
 }
 
-export default withSafeRoute(LayoutPage);
+// export default withSafeRoute(LayoutPage);
+export default LayoutPage;
