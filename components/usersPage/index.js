@@ -30,8 +30,6 @@ function UsersPage() {
     getUsersData();
   }, []);
 
-  console.log("====usersData=====", usersData);
-
   return (
     <section className="user-list my-4">
       <div className="container">
