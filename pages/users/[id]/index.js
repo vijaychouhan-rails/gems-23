@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 
 function UserShow() {
   const router = useRouter();
-  const { validated } = useAuth();
+  // const { validated } = useAuth();
 
   return (
     <div>

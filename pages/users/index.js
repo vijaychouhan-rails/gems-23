@@ -4,10 +4,12 @@ import UsersPage from "@/components/usersPage";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import useAuth from "@/utils/hooks/useAuth";
+import withSafeRoute from "@/components/layout/withSafeRoute";
 
 function Users() {
   const router = useRouter();
-  const { validated } = useAuth();
+  // const { validated } = useAuth();
+  const validated = true;
 
   // useEffect(() => {
   //   if (!validated) {
@@ -24,4 +26,4 @@ Users.getLayout = function getLayout(page) {
   return <LayoutPage>{page}</LayoutPage>;
 };
 
-export default Users;
+export default withSafeRoute(Users);
