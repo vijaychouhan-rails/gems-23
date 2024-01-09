@@ -51,6 +51,12 @@ function NavbarPage() {
             <Link href="/users" className="nav-link">
               Users
             </Link>
+            <Link href="/counter" className="nav-link">
+              Counter
+            </Link>
+            <Link href="/numbers" className="nav-link">
+              Numbers
+            </Link>
             <Nav.Link href="#pricing">Profile</Nav.Link>
           </Nav>
 
