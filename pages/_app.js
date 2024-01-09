@@ -1,19 +1,22 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import LayoutPage from "@/components/layout";
-// import '@/styles/globals.css'
 import "@/styles/custom.css";
 import "@/styles/theme.min.css";
+import { wrapper } from "@/utils/store";
+import { Provider } from "react-redux";
+import { useStore } from "react-redux";
 
-export default function App({ Component, pageProps }) {
-  // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout || ((page) => page);
+// Use wrapper.withRedux to wrap your main component
+const WrappedApp = wrapper.withRedux(({ Component, pageProps }) => {
+  const store = useStore();
 
-  // return (
-  //   // <LayoutPage>
-  //   <Component {...pageProps} />
-  //   // </LayoutPage>
-  // );
+  return (
+    <Provider store={store}>
+      <LayoutPage>
+        <Component {...pageProps} />
+      </LayoutPage>
+    </Provider>
+  );
+});
 
-  return getLayout(<Component {...pageProps} />);
-}
+export default WrappedApp;
