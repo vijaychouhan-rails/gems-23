@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export default function middleware(req) {
   const AUTH_NOT_ALLOWED_PATHS = ["/login", "/signup"];
-  const NO_AUTH_PATHS = ["/", "/home"];
+  const NO_AUTH_PATHS = ["/", "/home", "/counter", "/number"];
 
   let loggedin = !!req.cookies.get("gemstoken");
   const { pathname } = req.nextUrl;
