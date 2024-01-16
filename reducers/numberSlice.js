@@ -4,12 +4,12 @@ export const numberSlice = createSlice({
   name: "numberData",
   initialState: { numData: 1000 },
   reducers: {
-    increment1: (state) => {
-      console.log("===state====", state);
+    numIncrement: (state, action) => {
+      state.numData += action.payload;
     },
   },
 });
 
-export const { increment1 } = numberSlice.actions;
+export const { numIncrement } = numberSlice.actions;
 
 export default numberSlice.reducer;
