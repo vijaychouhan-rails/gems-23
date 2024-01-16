@@ -3,9 +3,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import User from "./user";
+import { loadData } from "@/reducers/usersSlice";
+import { useDispatch, useSelector } from "react-redux";
+import MyPagination from "./myPaginations";
 
 function UsersPage() {
   const [usersData, setUsersData] = useState([]);
+  const dispatch = useDispatch();
+  const userObj = useSelector((state) => state.users);
 
   const getUsersData = () => {
     axios
@@ -15,7 +20,8 @@ function UsersPage() {
         },
       })
       .then(function (res) {
-        setUsersData(res.data.data);
+        console.log("===res.data===", res.data);
+        dispatch(loadData(res.data));
       })
       .catch(function (error) {
         if (error?.response?.status == 400) {
@@ -44,12 +50,16 @@ function UsersPage() {
           </div>
           <div className="col">
             <div className="candidate-list">
-              {usersData.map((userData) => {
+              {userObj.data.map((userData) => {
                 return <User key={userData.id} data={userData} />;
               })}
             </div>
           </div>
         </div>
+        <MyPagination
+          totalPages={userObj.totalPages}
+          currentPage={userObj.currentPage}
+        />
       </div>
     </section>
   );

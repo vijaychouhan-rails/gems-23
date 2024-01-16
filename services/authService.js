@@ -8,7 +8,7 @@ export const loginService = async ({ email, password }) => {
       password: password,
     });
     Cookies.set("gemstoken", res.data.token, {
-      expires: new Date(new Date().getTime() + 10 * 60 * 1000),
+      expires: new Date(new Date().getTime() + 120 * 60 * 1000),
     });
 
     return { success: true, message: "Successful login" };
