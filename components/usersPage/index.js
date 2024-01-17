@@ -8,15 +8,16 @@ import { useDispatch, useSelector } from "react-redux";
 import MyPagination from "./myPaginations";
 
 function UsersPage() {
-  const [usersData, setUsersData] = useState([]);
   const dispatch = useDispatch();
   const userObj = useSelector((state) => state.users);
 
-  const getUsersData = () => {
+  console.log("===userObj===", userObj);
+
+  const getUsersData = ({ page }) => {
     axios
       .get("https://reqres.in/api/users", {
         params: {
-          page: 1,
+          page: page,
         },
       })
       .then(function (res) {
@@ -33,7 +34,7 @@ function UsersPage() {
   };
 
   useEffect(() => {
-    getUsersData();
+    getUsersData({ page: 1 });
   }, []);
 
   return (
@@ -59,6 +60,7 @@ function UsersPage() {
         <MyPagination
           totalPages={userObj.totalPages}
           currentPage={userObj.currentPage}
+          getUsersData={getUsersData}
         />
       </div>
     </section>
