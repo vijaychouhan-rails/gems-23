@@ -6,6 +6,7 @@ import User from "./user";
 import { loadData } from "@/reducers/usersSlice";
 import { useDispatch, useSelector } from "react-redux";
 import MyPagination from "./myPaginations";
+import NextButton from "./nextButton";
 
 function UsersPage() {
   const dispatch = useDispatch();
@@ -57,11 +58,16 @@ function UsersPage() {
             </div>
           </div>
         </div>
-        <MyPagination
+        <NextButton
+          totalPages={userObj.totalPages}
+          getUsersData={getUsersData}
+          currentPage={userObj.currentPage}
+        />
+        {/* <MyPagination
           totalPages={userObj.totalPages}
           currentPage={userObj.currentPage}
           getUsersData={getUsersData}
-        />
+        /> */}
       </div>
     </section>
   );
