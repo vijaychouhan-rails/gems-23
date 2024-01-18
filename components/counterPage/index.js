@@ -6,9 +6,11 @@ import { useSelector, useDispatch } from "react-redux";
 
 const CounterPage = ({ page }) => {
   const allData = useSelector((state) => state.counterRedu);
+  const users = useSelector((state) => state.users);
+
   const dispatch = useDispatch();
 
-  console.log("===Counter Page data=====", allData);
+  console.log("===Counter Page users data=====", users);
 
   const handleClick = (num) => {
     dispatch(increment());
